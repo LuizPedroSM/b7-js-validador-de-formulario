@@ -15,8 +15,6 @@ let b7Validator= {
                 b7Validator.showError(input, check);
             }
         }
-
-        send = false;
         if (send) {
             form.submit();
         }
@@ -34,9 +32,20 @@ let b7Validator= {
                        if (input.value == '') {
                            return 'Campo não pode ser vazio.';
                        }
-                       break;
+                    break;
                    case 'min':
-                        break;
+                        if (input.value.length < rulesDetails[1]) {
+                            return `Campo deve ter no mínimo ${rulesDetails[1]} caracteres` ;
+                        }
+                    break;
+                    case 'email':
+                        if (input.value != '') {
+                            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            if(!regex.test(input.value.toLowerCase())) {
+                                return 'E-mail digitado não é válido!';
+                            }
+                        }
+                    break;
                }
             }
         }
@@ -56,7 +65,7 @@ let b7Validator= {
         for (let index = 0; index < inputs.length; index++) {
             inputs[index].style = '';
         }
-        
+
         let errorElements = document.querySelectorAll('.error');
         for (let index = 0; index < errorElements.length; index++) {
             errorElements[index].remove();            

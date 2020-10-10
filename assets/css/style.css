@@ -39,6 +39,7 @@
 }
 
 .error {
+  margin-top: 2px;
   font-size: 14px;
   background-color: #f00;
   color: #fff;
