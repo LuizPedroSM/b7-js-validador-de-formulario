@@ -37,3 +37,11 @@
   padding: 8px;
   font-size: 14px;
 }
+
+.error {
+  font-size: 14px;
+  background-color: #f00;
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+}
