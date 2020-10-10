@@ -13,18 +13,28 @@
       </div>
       <div class="rightSide">
         <h1>Crie uma conta</h1>
-        <form action="" method="post">
+        <form class="b7validator" method="post">
           <label for="name">
             Seu name: <br />
-            <input type="text" name="name" id="name" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              data-rules="required|min=2"
+            />
           </label>
           <label for="email">
             Seu email: <br />
-            <input type="text" name="email" id="email" />
+            <input type="text" name="email" id="email" data-rules="required" />
           </label>
           <label for="password">
             Seu password: <br />
-            <input type="text" name="password" id="password" />
+            <input
+              type="text"
+              name="password"
+              id="password"
+              data-rules="required"
+            />
           </label>
           <label for="signUp">
             <input type="submit" value="Cadastrar" id="signUp" />
